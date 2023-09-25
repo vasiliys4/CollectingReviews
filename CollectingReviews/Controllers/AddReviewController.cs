@@ -10,10 +10,6 @@ namespace CollectingReviews.Controllers
         {
             this.repository = repository;
         }
-        public IActionResult Index()
-        {
-            return View();
-        }
         [HttpGet]
         public IActionResult Add()
         {

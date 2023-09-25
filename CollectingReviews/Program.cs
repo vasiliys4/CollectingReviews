@@ -1,5 +1,6 @@
 using CollectingReviews.Data;
 using CollectingReviews.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 internal class Program
@@ -13,7 +14,10 @@ internal class Program
 
         string? connection = builder.Configuration.GetConnectionString("DefaultConnection");
         builder.Services.AddDbContext<ApplicationDBContext>(options => options.UseSqlServer(connection));
-        //builder.Services.AddDbContext<UserDBContext>(options => options.UseSqlServer(connection));
+        builder.Services.AddDbContext<UserDBContext>(options => options.UseSqlServer(connection));
+
+        builder.Services.AddIdentity<UserForDB, IdentityRole>().AddEntityFrameworkStores<UserDBContext>();
+
 
         builder.Services.AddScoped<IRepository, Repository>();
 
