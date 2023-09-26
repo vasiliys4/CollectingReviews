@@ -1,0 +1,16 @@
+﻿@model List<CollectingReviews.Models.Review>;
+@{
+    Layout = Layout;
+}
+
+@foreach (var item in Model)
+{
+    <div class="card border-success mb-3" style="max-width: 18rem;">
+        <div class="card-header bg-transparent border-success"><a asp-controller="GetReview" asp-action="Index" asp-route-id="@item.Id">@item.OrganizationName</a></div>
+        <div class="card-body text-success">
+            <h5 class="card-title">@item.Address</h5>
+            <p class="card-text">@item.Estimation</p>
+        </div>
+        <a asp-action="DeleteReview" asp-route-id="@item.Id" class="btn btn-primary">Добавить в корзину</a>
+    </div>
+}

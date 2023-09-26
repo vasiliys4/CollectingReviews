@@ -1,15 +1,17 @@
 ﻿@model CollectingReviews.Models.Review;
 @{
-    Layout = null;
+    Layout = Layout;
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-</body>
-</html>
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+        <h6 class="card-subtitle mb-2 text-muted">@Model.OrganizationName</h6>
+        <p class="card-text">@Model.GoodFeedback</p>
+        <p class="card-text">@Model.BadFeedback</p>
+        <p class="card-text">@Model.Coments</p>
+        <p class="card-text">@Model.Estimation</p>
+@*         <a href="#" class="card-link">Ссылка карточки</a>
+        <a href="#" class="card-link">Другая ссылка</a> *@
+    </div>
+</div>
