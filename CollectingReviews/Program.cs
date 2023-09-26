@@ -30,7 +30,7 @@ internal class Program
             {
                 var userManager = services.GetRequiredService<UserManager<UserForDB>>();
                 var rolesManager = services.GetRequiredService<RoleManager<IdentityRole>>();
-                await RoleInitializer.InitializeAsync(userManager, rolesManager);
+                //await RoleInitializer.InitializeAsync(userManager, rolesManager);
             }
             catch (Exception ex)
             {
