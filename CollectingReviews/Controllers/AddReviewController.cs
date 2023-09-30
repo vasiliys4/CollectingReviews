@@ -19,7 +19,7 @@ namespace CollectingReviews.Controllers
         public async Task<IActionResult> Add(Review review)
         {
             await repository.CreateReview(review);
-            return RedirectToAction("Index");
+            return RedirectToAction("Add");
         }
     }
 }

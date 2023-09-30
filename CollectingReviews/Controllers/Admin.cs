@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CollectingReviews.Controllers
 {
-    //[Authorize(Roles ="admin")]
+    [Authorize(Roles ="Admin")]
     public class Admin : Controller
     {
         readonly IRepository repository;
@@ -29,9 +29,10 @@ namespace CollectingReviews.Controllers
             }
             return View(review);
         }
-        public async Task DeleteReview(Guid id)
+        public async Task<IActionResult> DeleteReview(Guid id)
         {
             await repository.delete(id);
+            return RedirectToAction("Index");
         }
         [HttpGet]
         public IActionResult GetUsers() => View(_userManager.Users.ToList());
