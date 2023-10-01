@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using CollectingReviews.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace CollectingReviews.Models
 {

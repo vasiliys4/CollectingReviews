@@ -16,7 +16,7 @@ namespace CollectingReviews.Models
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task delete(Guid id)
+        public async Task DeleteReview(Guid id)
         {
             var review = await _dbContext.Reviews.FirstOrDefaultAsync(x => x.Id == id);
             _dbContext.Reviews.Remove(review);
@@ -24,7 +24,7 @@ namespace CollectingReviews.Models
 
         }
 
-        public async Task<Review> get(Guid id)
+        public async Task<Review> GetReview(Guid id)
         {
             return await _dbContext.Reviews.FirstOrDefaultAsync(x => x.Id == id);
         }
@@ -34,7 +34,7 @@ namespace CollectingReviews.Models
             return await _dbContext.Reviews.ToListAsync();
         }
 
-        public async Task update(Review review)
+        public async Task UpdateReview(Review review)
         {
             var existingReview = await _dbContext.Reviews.FirstOrDefaultAsync(x => x.Id == review.Id);
             existingReview = review;

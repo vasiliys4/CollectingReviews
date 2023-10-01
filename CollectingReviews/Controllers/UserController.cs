@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CollectingReviews.Controllers
 {
-        [Authorize]
+    [Authorize]
         public class UserController : Controller
         {
             private readonly UserManager<UserForDB> _userManager;

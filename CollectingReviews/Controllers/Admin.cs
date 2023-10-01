@@ -31,7 +31,7 @@ namespace CollectingReviews.Controllers
         }
         public async Task<IActionResult> DeleteReview(Guid id)
         {
-            await repository.delete(id);
+            await repository.DeleteReview(id);
             return RedirectToAction("Index");
         }
         [HttpGet]

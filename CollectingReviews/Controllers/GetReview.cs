@@ -14,7 +14,7 @@ namespace CollectingReviews.Controllers
         [HttpGet]
         public async Task<IActionResult> Index(Guid id)
         {
-            var review = await repository.get(id);
+            var review = await repository.GetReview(id);
             if (review == null)
             {
                 Redirect("Home/Index");

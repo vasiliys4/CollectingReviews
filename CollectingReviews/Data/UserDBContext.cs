@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using CollectingReviews.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using CollectingReviews.Models;
 
 namespace CollectingReviews.Data
 {
